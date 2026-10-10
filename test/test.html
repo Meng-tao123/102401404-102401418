@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>单元测试 · 校园失物招领</title>
+<style>
+  body{margin:0;font-family:"PingFang SC","Microsoft YaHei",Arial,sans-serif;background:#F6F5F2;color:#1E2A38}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 24px 60px}
+  h1{font-size:20px;margin-bottom:6px}
+  .desc{font-size:13px;color:#6E6B66;margin-bottom:20px}
+  h3{font-size:14px;margin:22px 0 8px;color:#4C6EA8}
+  p{margin:4px 0;font-size:13.5px;line-height:1.6}
+  p.pass{color:#3C7A5E}
+  p.fail{color:#C0492A}
+  p.fail span{color:#8A6A5E;font-size:12px}
+  .summary{padding:14px 16px;border-radius:12px;font-size:14px;font-weight:600;margin-bottom:8px}
+  .summary.good{background:#E9F2EC;color:#2F6E52}
+  .summary.bad{background:#FBEDE6;color:#A8451F}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>校园失物招领 · 单元测试</h1>
+  <p class="desc">打开本页即自动运行 <code>test/tests.js</code> 中的全部用例；命令行可执行 <code>node test/run.js</code> 得到同样结果。</p>
+  <div id="out"></div>
+</div>
+
+<script src="../js/core.js"></script>
+<script src="../js/repo.js"></script>
+<script src="framework.js"></script>
+<script src="tests.js"></script>
+<script>
+  var summary = window.TestKit.run();
+  window.TestKit.render(summary, document.getElementById('out'));
+  document.title = (summary.failed ? '✘ ' : '✔ ') + summary.passed + '/' + summary.total + ' · 单元测试';
+</script>
+</body>
+</html>
